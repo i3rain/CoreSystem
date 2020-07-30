@@ -7,6 +7,7 @@ use pocketmine\command\PluginCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\command\Command;
+use onebone\economyapi\EconomyAPI;
 
 class Moneydrop extends PluginCommand {
 
@@ -30,7 +31,7 @@ class Moneydrop extends PluginCommand {
 				$from = $sender->getName();
 				$zahl = $args[0];
 				foreach ($sender->getServer()->getOnlinePlayers() as $player) {
-                    $sender->getServer()->getPluginManager()->getPlugin("EconomyAPI")->addMoney($player, $zahl);
+                   EconomyAPI::getInstance()->addMoney($player, $zahl);
            	   $player->sendMessage(Core::PREFIX."§aDu hast §f" .$zahl. "$ §aerhalten von einem Moneydrop!");
         	}
 					$sender->getServer()->broadcastMessage(Core::PREFIX."§f" .$from. "§a hat einen §f" .$zahl. "$ §aMoneydrop gemacht");
