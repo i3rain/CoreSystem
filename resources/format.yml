@@ -1,0 +1,4 @@
+---
+signtime: d.m.Y (H:i)
+signtext: "\n§r§fSigniert am:\n§6{date} \n§fSpieler:\n§6{player} \n\n§r§f{text}"
+...

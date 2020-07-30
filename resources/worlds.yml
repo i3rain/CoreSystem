@@ -1,0 +1,41 @@
+---
+Welt1-Befehl: welt1
+Welt1-Teleport-Message: §aDu wurdest zu Welt1 teleportiert
+Welt1-Name: Welt1
+
+Welt2-Befehl: welt2
+Welt2-Teleport-Message: §aDu wurdest zu Welt2 teleportiert
+Welt2-Name: Welt2
+
+Welt3-Befehl: welt3
+Welt3-Teleport-Message: §aDu wurdest zu Welt3 teleportiert
+Welt3-Name: Welt3
+
+Welt4-Befehl: welt4
+Welt4-Teleport-Message: §aDu wurdest zu Welt4 teleportiert
+Welt4-Name: Welt4
+
+Welt5-Befehl: welt5
+Welt5-Teleport-Message: §aDu wurdest zu Welt5 teleportiert
+Welt5-Name: Welt5
+
+Welt6-Befehl: welt6
+Welt6-Teleport-Message: §aDu wurdest zu Welt6 teleportiert
+Welt6-Name: Welt6
+
+Welt7-Befehl: welt7
+Welt7-Teleport-Message: §aDu wurdest zu Welt7 teleportiert
+Welt7-Name: Welt7
+
+Teleport-Befehl: tphelp
+Teleport-Message: |-
+  §aHier sind alle (Beispiel) Teleport Befehle:
+  §f/welt1 §a(Welt1)
+  §f/welt2 §a(Welt2)
+  §f/welt3 §a(Welt3)
+  §f/welt4 §a(Welt4)
+  §f/welt5 §a(Welt5)
+  §f/welt6 §a(Welt6)
+  §f/welt7 §a(Welt7)
+  §f
+...
