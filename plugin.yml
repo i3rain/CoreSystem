@@ -3,3 +3,4 @@ main: i3rain\Core
 version: 1.2.8
 api: 3.0.0
 author: i3rain
+depend: EconomyAPI
