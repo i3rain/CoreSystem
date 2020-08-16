@@ -54,8 +54,13 @@ class Rename extends PluginCommand implements Listener{
             $sender->sendMessage(Core::PREFIX."§cDu musst ein Text eingeben");
             return;
         }
-		$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);		
-        if ($sender->hasPermission("cmd.rename")) {
+		$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);
+		if ($sender->hasPermission("cooldown.bypass")) {	
+			$item->setCustomName(implode(" ", $args));
+        	$sender->getInventory()->setItemInHand($item);
+			$sender->sendMessage(Core::PREFIX."§aDein Item wurde umbennant!");
+			return true;
+		}elseif ($sender->hasPermission("cmd.rename")) {
 			if (!$config->exists($sender->getName() . "Rename")){	
 				$config->set($sender->getName() . "Rename", date('Y-m-d H:i:s'));
 				$config->save();

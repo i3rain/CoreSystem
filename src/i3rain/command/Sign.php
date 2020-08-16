@@ -59,7 +59,13 @@ class Sign extends PluginCommand implements Listener {
         }
 
 			$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);
-			
+		if ($sender->hasPermission("cooldown.bypass")) {
+			$inv = $sender->getInventory()->getItemInHand();
+       		$inv->setLore([$this->plugin->getSign($sender, implode(' ', $args))]);
+			$sender->getInventory()->setItemInHand($inv);
+			$sender->sendMessage(Core::PREFIX."§aDein Item wurde signiert!");
+			return true;
+		}	
         if ($sender->hasPermission("cmd.sign")) {
 			if (!$config->exists($sender->getName() . "Sign")){	
 				$config->set($sender->getName() . "Sign", date('Y-m-d H:i:s'));

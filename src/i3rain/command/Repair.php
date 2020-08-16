@@ -61,7 +61,14 @@ class Repair extends Command implements Listener{
 			$sender->sendMessage(Core::PREFIX. "§cDas Item hat keinen Schaden");
 			return true;
 		}
-		$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);		
+		$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);
+		if ($sender->hasPermission("cooldown.bypass")) {
+			if($item->getDamage() > 0){
+				$sender->getInventory()->setItem($info, $item->setDamage(0));
+				$sender->sendMessage(Core::PREFIX."§aDein Item wurde Repariert");
+			return true;
+			}
+		}		
 		if ($sender->hasPermission("cmd.repair")) {
 			if (!$config->exists($sender->getName() . "Repair")){	
 				$config->set($sender->getName() . "Repair", date('Y-m-d H:i:s'));
@@ -74,8 +81,9 @@ class Repair extends Command implements Listener{
 					$sender->getInventory()->setItem($info, $item->setDamage(0));
 					$date = new DateTime('+1 day');
 					$config->set($sender->getName() . "Repair", $date->format('Y-m-d H:i:s'));
-					$config->save();					$sender->sendMessage(Core::PREFIX."§aDein Item wurde Repariert");
-				$sender->sendMessage(Core::PREFIX. "§cAm §f" . $config->get($sender->getName() . "Repair") . " §ckannst du wieder ein Item reparieren!");
+					$config->save();					
+					$sender->sendMessage(Core::PREFIX."§aDein Item wurde Repariert");
+					$sender->sendMessage(Core::PREFIX. "§cAm §f" . $config->get($sender->getName() . "Repair") . " §ckannst du wieder ein Item reparieren!");
 			}else{
 				$sender->sendMessage(
 					"§6§cAm§f " . $config->get($sender->getName() . "Repair") . " §ckannst du wieder ein Item reparieren!");

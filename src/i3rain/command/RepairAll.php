@@ -54,7 +54,24 @@ class RepairAll extends PluginCommand implements Listener{
 			$info = $sender->getInventory()->getHeldItemIndex();
 			$item = $sender->getInventory()->getItem($info);
 			$config = new Config($this->plugin->getDataFolder().'cooldown.yml', Config::YAML);		
-					
+			if ($sender->hasPermission("cooldown.bypass")) {
+				foreach($sender->getInventory()->getContents() as $info => $item){
+					if($this->Repairable($item)){
+						if($item->getDamage() > 0){
+							$sender->getInventory()->setItem($info, $item->setDamage(0));
+						}
+					}
+				}
+				foreach($sender->getArmorInventory()->getContents() as $info => $item){
+					if($this->Repairable($item)){
+						if($item->getDamage() > 0){
+							$sender->getArmorInventory()->setItem($info, $item->setDamage(0));
+							}
+						}
+					}
+				$sender->sendMessage(Core::PREFIX."§aDeine ganzen Items wurden Repariert");
+				return true;
+			}		
 			if ($sender->hasPermission("cmd.repairall")) {
 			if (!$config->exists($sender->getName() . "RepairAll")){	
 				$config->set($sender->getName() . "RepairAll", date('Y-m-d H:i:s'));
@@ -70,10 +87,10 @@ class RepairAll extends PluginCommand implements Listener{
 					}
 				}
 			}
-				foreach($sender->getArmorInventory()->getContents() as $info => $item){
-					if($this->Repairable($item)){
-						if($item->getDamage() > 0){
-							$sender->getArmorInventory()->setItem($info, $item->setDamage(0));
+			foreach($sender->getArmorInventory()->getContents() as $info => $item){
+				if($this->Repairable($item)){
+					if($item->getDamage() > 0){
+						$sender->getArmorInventory()->setItem($info, $item->setDamage(0));
 						}
 					}
 				}
