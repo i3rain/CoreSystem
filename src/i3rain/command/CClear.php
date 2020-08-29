@@ -18,16 +18,17 @@ class CClear extends PluginCommand {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         $name = $sender->getName();
+        $player = Core::getMain()->getServer->getOnlinePlayers();
         if(!$sender instanceof Player) return false;
         if(!$sender->hasPermission($this->getPermission())){
             $sender->sendMessage(Core::NOPERM);
             return false;
         }
         if ($sender->hasPermission("cmd.cclear")) {
-				foreach ($sender->getServer()->getOnlinePlayers() as $player) {
+				foreach (Core::getMain()->getServer()->getOnlinePlayers() as $player) {
             $player->sendMessage(Core::PREFIX."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n§0[§6Core§0] §f: §r§aDer Chat wurde von §f$name §ageleert");
-            $sender->sendMessage(Core::PREFIX."§aDu hast den Chat geleert");
         	}
+            $sender->sendMessage(Core::PREFIX."§aDu hast den Chat geleert");
 		}
         return true;
     }
