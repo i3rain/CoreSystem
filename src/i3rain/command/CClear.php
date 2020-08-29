@@ -18,7 +18,7 @@ class CClear extends PluginCommand {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         $name = $sender->getName();
-        $player = Core::getMain()->getServer->getOnlinePlayers();
+        $player = Core::getMain()->getServer()->getOnlinePlayers();
         if(!$sender instanceof Player) return false;
         if(!$sender->hasPermission($this->getPermission())){
             $sender->sendMessage(Core::NOPERM);
