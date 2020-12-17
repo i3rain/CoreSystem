@@ -58,8 +58,8 @@ Dieses Plugin besitzt viele Funktionen um euren Server zu verbessern und die Bed
 • cmd.laggs (Laggs entfernen)
 • cmd.emote (Emotes)
 • cmd.tpw (Teleport System)
-• cooldown.bypass (Umgehe den Cooldown von einem Tag bei Repair, Sign und Rename)
-```
+• cmd.size (Verändere deine Größe mit /size)
+• cooldown.bypass (Umgehe den Cooldown von einem Tag bei Repair, Sign und Rename)```
 📌 **Installation**
 ```
 Installiere die aktuelle Version vom Core in dem du Ihn hier herunterlädst oder von Poggit.
