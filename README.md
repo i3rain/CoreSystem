@@ -27,6 +27,7 @@ Dieses Plugin besitzt viele Funktionen um euren Server zu verbessern und die Bed
 • Rename (/rename)
 • Laggs entfernen (/laggs)
 • Teleport System (/tphelp)
+• Size (/size)
 ```
 
 📌 **Permissions:**
