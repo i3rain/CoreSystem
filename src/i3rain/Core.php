@@ -51,6 +51,7 @@ use i3rain\emote\Traurig;
 use i3rain\emote\Wut;
 use i3rain\emote\Happy;
 use i3rain\emote\Verliebt;
+use i3rain\command\Size;
 
 
 class Core extends PluginBase{
@@ -73,7 +74,7 @@ class Core extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new Rename($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Sign($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Laggs($this), $this);
-        $this->getServer()->getCommandMap()->registerAll("Core",[new Fly(), new Vanish(), new GMS(), new GMC(), new GMZ(), new GMA(), new Heal(), new Feed(), new Nachtsicht(), new Speed(), new Tag(), new Nacht(), new ItemID(), new IClear(), new EC(), new TPAll(), new Welt1($this), new Welt2($this), new Welt3($this), new Welt4($this), new Welt5($this), new Welt6($this), new Welt7($this), new TPCmd($this), new Moneydrop(), new EClear(), new CClear(), new Hilfe(), new Info(), new Emote(), new Lachen(), new Freuen(), new Tanzen(), new Verliebt(), new Traurig(), new Wut(), new Happy(), new Rename($this), new Repair($this), new RepairAll($this), new Sign($this), new Laggs($this)]);
+        $this->getServer()->getCommandMap()->registerAll("Core",[new Fly(), new Vanish(), new GMS(), new GMC(), new GMZ(), new GMA(), new Heal(), new Feed(), new Nachtsicht(), new Speed(), new Tag(), new Nacht(), new ItemID(), new IClear(), new EC(), new TPAll(), new Welt1($this), new Welt2($this), new Welt3($this), new Welt4($this), new Welt5($this), new Welt6($this), new Welt7($this), new TPCmd($this), new Moneydrop(), new EClear(), new CClear(), new Hilfe(), new Info(), new Emote(), new Lachen(), new Freuen(), new Tanzen(), new Verliebt(), new Traurig(), new Wut(), new Happy(), new Rename($this), new Repair($this), new RepairAll($this), new Sign($this), new Laggs($this), new Size($this)]);
 		$economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		if (is_null($economy)){
 			$cmdMap = $this->getServer()->getCommandMap();
