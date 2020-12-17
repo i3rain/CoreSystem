@@ -11,12 +11,11 @@ use pocketmine\command\Command;
 class Size extends PluginCommand
 {
 
-    public function __construct(\i3rain\Core $param)
+    public function __construct()
     {
         parent::__construct("size", Core::getMain());
         $this->setDescription("Lege deine Größe fest");
         $this->setPermission("cmd.size");
-        $this->param = $param;
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
